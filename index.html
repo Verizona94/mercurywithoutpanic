@@ -2,263 +2,46 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Меркурий без паники — курс по ФГИС «Меркурий»</title>
   <meta name="description" content="Курс по работе во ФГИС Меркурий: видеоуроки, чек‑листы, тесты и поддержка. Подписка. Формат — Telegram WebApp." />
-
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Меркурий без паники — курс по ФГИС «Меркурий»">
-  <meta property="og:description" content="Курс по работе во ФГИС Меркурий: видеоуроки, чек‑листы, тесты и поддержка">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://verizona94.github.io/mercurywithoutpanic/">
-  <!-- <meta property="og:image" content="https://verizona94.github.io/mercurywithoutpanic/preview.jpg"> -->
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Favicon (transparent 1x1 PNG) -->
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
-
   <style>
-    :root {
-      --bg: #0f1724;
-      --card: #0b1220;
-      --accent: #22c55e;
-      --muted: #94a3b8;
-      --glass: rgba(255,255,255,0.03);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: linear-gradient(180deg, #071024 0%, #071229 100%);
-      color: #e6eef8;
-      line-height: 1.5;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-    }
-    .logo {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-    .logo .mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), #06b6d4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: #042029;
-      flex-shrink: 0;
-    }
-    nav { display: flex; gap: 18px; align-items: center; }
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: #cbd5e1; }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 28px;
-      align-items: center;
-      margin-top: 24px;
-    }
-    .hero h1 {
-      font-size: 36px;
-      margin: 0 0 12px;
-      color: #f8fafc;
-    }
-    .lead { color: var(--muted); margin-bottom: 18px; }
-    .cta-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-    .btn {
-      background: var(--accent);
-      border: none;
-      color: #012023;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .btn:hover {
-      background: #16a34a;
-      transform: translateY(-1px);
-    }
-    .btn:active { transform: translateY(0); }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-      padding: 10px 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: #cbd5e1;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 18px;
-      border-radius: 14px;
-      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
-    }
-
-    .section {
-      margin-top: 64px;
-    }
-    .section h2 {
-      font-size: 28px;
-      margin-bottom: 24px;
-      color: #f1f5f9;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .feature {
-      background: var(--glass);
-      padding: 16px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.02);
-    }
-    .feature strong { display: block; margin-bottom: 6px; }
-
-    .how-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .step {
-      display: flex;
-      gap: 16px;
-    }
-    .step-number {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #012023;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-    }
-    .step-content { flex: 1; }
-
-    .modules {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .module {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding: 14px;
-      border-radius: 10px;
-    }
-
-    .pricing {
-      display: flex;
-      gap: 14px;
-    }
-    .price-card {
-      flex: 1;
-      padding: 20px;
-      border-radius: 12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    .price-card.popular {
-      border-color: var(--accent);
-      position: relative;
-    }
-    .popular-badge {
-      position: absolute;
-      top: -12px;
-      right: 12px;
-      background: var(--accent);
-      color: #012023;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 20px;
-    }
-    .price { font-size: 28px; font-weight: 800; color: var(--accent); margin: 8px 0; }
-    .price small { font-size: 14px; color: var(--muted); font-weight: 400; }
-
-    .faq details {
-      background: var(--card);
-      padding: 16px;
-      margin-bottom: 8px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.02);
-    }
-    .faq summary {
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-    }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after {
-      content: "+";
-      float: right;
-      font-size: 18px;
-      transition: transform 0.2s;
-    }
-    details[open] > summary::after { content: "−"; }
-
-    footer {
-      margin-top: 64px;
-      padding: 24px 0;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.03);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .features { grid-template-columns: repeat(2, 1fr); }
-      .modules { grid-template-columns: 1fr; }
-      .pricing { flex-direction: column; }
-    }
-    @media (max-width: 520px) {
-      .features { grid-template-columns: 1fr; }
-      .logo .text { display: none; }
-      .hero h1 { font-size: 26px; }
-      nav { gap: 10px; }
-    }
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#22c55e;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071024 0%, #071229 100%);color:#e6eef8;line-height:1.5}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042029}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:24px}
+    .hero h1{font-size:36px;margin:0 0 12px;color:#f8fafc}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{background:var(--accent);border:none;color:#012023;padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 16px;border-radius:12px;text-decoration:none}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 24px rgba(2,6,23,0.6);}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .feature{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .modules{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .module{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:10px}
+    .pricing{display:flex;gap:14px;margin-top:18px}
+    .price-card{flex:1;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.03)}
+    .price{font-size:22px;font-weight:800;color:var(--accent)}
+    footer{margin-top:36px;padding:24px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+    .faq{margin-top:18px}
+    .faq details{background:var(--card);padding:12px;margin-bottom:8px;border-radius:10px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.features{grid-template-columns:repeat(2,1fr)}.modules{grid-template-columns:1fr}.pricing{flex-direction:column}}
+    @media (max-width:520px){.features{grid-template-columns:1fr}.logo .text{display:none}.hero h1{font-size:26px}}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="logo" aria-label="Логотип курса «Меркурий без паники»">
+      <div class="logo">
         <div class="mark">М</div>
         <div>
           <div style="font-weight:800;">Меркурий без паники</div>
@@ -267,183 +50,84 @@
       </div>
       <nav>
         <a href="#how">Как это работает</a>
+        <a href="#cabinet">Кабинет</a>
         <a href="#program">Программа</a>
         <a href="#price">Тарифы</a>
         <a href="#faq">FAQ</a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero">
-        <div>
-          <h1>Освой ФГИС «Меркурий» без нервотрёпки</h1>
-          <p class="lead">Пошаговые видеоуроки, шаблоны ВСД, реальные кейсы и тесты. Всё сделано, чтобы ты быстро начал работать и не нарывался на ошибки.</p>
-          <div class="cta-row">
-            <a href="login.html" class="btn" role="button">Войти в кабинет</a>
-            <a href="#price" class="btn-outline">Смотреть тарифы</a>
-          </div>
+    <section class="hero">
+      <div>
+        <h1>Освой ФГИС «Меркурий» без нервотрёпки</h1>
+        <p class="lead">Пошаговые видеоуроки, шаблоны ВСД, реальные кейсы и тесты. Всё сделано, чтобы ты быстро начал работать и не нарывался на ошибки.</p>
+        <div class="cta-row">
+          <a href="cabinet.html" class="btn" role="button">Войти в кабинет</a>
+          <a href="#price" class="btn-outline">Смотреть тарифы</a>
+        </div>
 
-          <div class="features">
-            <div class="feature">
-              <strong>Видео уроки</strong>
-              <div style="color:var(--muted);font-size:13px">От регистрации до гашения ВСД.</div>
+        <div class="features">
+          <div class="feature"><strong>Видео уроки</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">От регистрации до гашения ВСД.</div></div>
+          <div class="feature"><strong>Чек‑листы</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Готовые инструкции.</div></div>
+          <div class="feature"><strong>Поддержка</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Помогаем разбирать ошибки.</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div>
+              <div style="font-weight:800">Начни прямо сейчас</div>
+              <div style="font-size:13px;color:var(--muted)">WebApp внутри Telegram</div>
             </div>
-            <div class="feature">
-              <strong>Чек‑листы</strong>
-              <div style="color:var(--muted);font-size:13px">Готовые инструкции для работы.</div>
-            </div>
-            <div class="feature">
-              <strong>Поддержка</strong>
-              <div style="color:var(--muted);font-size:13px">Помогаем разобрать ошибки и кейсы.</div>
+            <div style="text-align:right">
+              <div style="font-size:12px;color:var(--muted)">Пробный доступ</div>
+              <div style="font-weight:800;color:var(--accent)">7 дней</div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div>
-          <div class="card">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-              <div>
-                <div style="font-weight:800">Начни прямо сейчас</div>
-                <div style="font-size:13px;color:var(--muted)">WebApp внутри Telegram</div>
-              </div>
-              <div style="text-align:right">
-                <div style="font-size:12px;color:var(--muted)">Пробный доступ</div>
-                <div style="font-weight:800;color:var(--accent)">7 дней</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section id="how" class="section">
+      <h2>Как это работает</h2>
+      <p>1. Регистрируетесь → 2. Получаете доступ → 3. Учитесь в удобном темпе</p>
+    </section>
 
-      <!-- Как это работает -->
-      <section id="how" class="section">
-        <h2>Как это работает</h2>
-        <div class="how-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <strong>Подписываешься</strong> — оплачиваешь доступ на месяц/год или используешь пробный период.
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <strong>Открываешь в Telegram</strong> — заходишь в WebApp, смотришь уроки, скачиваешь чек‑листы.
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <strong>Работаешь и спрашиваешь</strong> — задаёшь вопросы в чате поддержки, разбираете ошибки вместе.
-            </div>
-          </div>
-        </div>
-      </section>
+    <section id="cabinet" class="section">
+      <h2>Личный кабинет</h2>
+      <p>Все материалы, прогресс и поддержка — в одном месте.</p>
+      <a href="cabinet.html" class="btn-outline">Открыть кабинет</a>
+    </section>
 
-      <!-- Программа -->
-      <section id="program" class="section">
-        <h2>Программа курса</h2>
-        <div class="modules">
-          <div class="module">
-            <strong>Модуль 1</strong><br>
-            Регистрация: аккаунт, организация, сотрудники, права доступа.
-          </div>
-          <div class="module">
-            <strong>Модуль 2</strong><br>
-            ВСД: виды, оформление, ошибки, шаблоны.
-          </div>
-          <div class="module">
-            <strong>Модуль 3</strong><br>
-            Гашение и отмена ВСД, работа с архивом.
-          </div>
-          <div class="module">
-            <strong>Модуль 4</strong><br>
-            Интеграция с 1С, ЭДО, типовые сценарии.
-          </div>
+    <section id="price" class="section">
+      <h2>Тарифы</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <div><strong>Стандарт</strong></div>
+          <div class="price">1 490 ₽/мес</div>
+          <ul style="font-size:14px;color:var(--muted);padding-left:20px;margin:12px 0">
+            <li>Все видеоуроки</li>
+            <li>Чек‑листы и шаблоны</li>
+          </ul>
         </div>
-      </section>
-
-      <!-- Тарифы -->
-      <section id="price" class="section">
-        <h2>Тарифы</h2>
-        <div class="pricing">
-          <div class="price-card">
-            <div><strong>Стандарт</strong></div>
-            <div class="price">1 490 ₽<small>/месяц</small></div>
-            <ul style="font-size:14px;color:var(--muted);padding-left:20px;">
-              <li>Все видеоуроки</li>
-              <li>Чек‑листы и шаблоны</li>
-              <li>Доступ к чату поддержки</li>
-            </ul>
-            <a href="https://t.me/..." class="btn" style="width:100%;margin-top:12px">Подключить</a>
-          </div>
-          <div class="price-card popular">
-            <div class="popular-badge">Популярный</div>
-            <div><strong>Про</strong></div>
-            <div class="price">14 900 ₽<small>/год</small></div>
-            <ul style="font-size:14px;color:var(--muted);padding-left:20px;">
-              <li>Всё из «Стандарта»</li>
-              <li>+ Индивидуальная консультация (1 час)</li>
-              <li>+ Разбор вашего кейса</li>
-              <li>+ Обновления 12 месяцев</li>
-            </ul>
-            <a href="https://t.me/..." class="btn" style="width:100%;margin-top:12px">Подключить</a>
-          </div>
+        <div class="price-card">
+          <div><strong>Про</strong></div>
+          <div class="price">14 900 ₽/год</div>
+          <ul style="font-size:14px;color:var(--muted);padding-left:20px;margin:12px 0">
+            <li>Всё из «Стандарта»</li>
+            <li>+ Индивидуальная консультация</li>
+            <li>+ Разбор кейса</li>
+          </ul>
         </div>
-      </section>
-
-      <!-- FAQ -->
-      <section id="faq" class="section">
-        <h2>Частые вопросы</h2>
-        <div class="faq">
-          <details>
-            <summary>Нужны ли права администратора в Меркурии для прохождения курса?</summary>
-            <p>Нет. В курсе есть отдельные ролики для разных ролей: сотрудник, ветврач, администратор. Выбирайте то, что подходит вам.</p>
-          </details>
-          <details>
-            <summary>Актуален ли курс на 2025 год?</summary>
-            <p>Да. Курс обновляется ежеквартально. Все изменения в интерфейсе и регламентах отслеживаются и фиксируются в уроках.</p>
-          </details>
-          <details>
-            <summary>Можно ли оплатить через ИП/юрлицо?</summary>
-            <p>Да, выставляем счёт и акт по запросу — напишите в поддержку после оплаты.</p>
-          </details>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
         <div>© Меркурий без паники, 2025</div>
-        <div><a href="mailto:support@mercury-nopanic.ru" style="color:var(--muted);text-decoration:underline">support@mercury-nopanic.ru</a></div>
       </div>
     </footer>
   </div>
-
-  <!-- Smooth scroll & accessibility -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', e => {
-          e.preventDefault();
-          const id = anchor.getAttribute('href').slice(1);
-          const target = document.getElementById(id);
-          if (target) {
-            const offset = 80; // компенсация header
-            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top, behavior: 'smooth' });
-          }
-        });
-      });
-
-      // Focus management for details
-      document.querySelectorAll('details').forEach(detail => {
-        detail.addEventListener('toggle', () => {
-          if (detail.open) detail.querySelector('summary').focus();
-        });
-      });
-    });
-  </script>
 </body>
 </html>
