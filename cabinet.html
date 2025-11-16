@@ -1,53 +1,55 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Кабинет — Меркурий без паники</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:#0f1724; --card:#0b1220; --accent:#22c55e; --muted:#94a3b8; --glass:rgba(255,255,255,0.03); --danger:#ef4444; --warning:#f59e0b;
-    }
-    * {box-sizing:border-box;}
-    body {margin:0;font-family:'Inter',sans-serif;background:linear-gradient(180deg,#071024 0%,#071229 100%);color:#e6eef8;line-height:1.5;}
-    .container {max-width:1100px;margin:0 auto;padding:24px;}
-    header {display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.03);margin-bottom:32px;}
-    .logo {display:flex;align-items:center;gap:12px;}
-    .mark {width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:800;color:#012023;}
-    .user-info {display:flex;align-items:center;gap:12px;}
-    .avatar {width:32px;height:32px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:600;color:#012023;}
-    .card {background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 24px rgba(2,6,23,0.6);margin-bottom:24px;}
-    h1,h2 {font-size:24px;margin:0 0 20px;color:#f1f5f9;}
-    h3 {font-size:18px;margin:0 0 12px;}
-    .progress-bar {height:6px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;margin:8px 0;}
-    .progress-fill {height:100%;background:var(--accent);border-radius:3px;}
-    .badge {font-size:12px;padding:2px 8px;border-radius:20px;font-weight:600;}
-    .badge.active {background:rgba(34,197,94,0.2);color:var(--accent);}
-    .badge.expired {background:rgba(239,68,68,0.2);color:var(--danger);}
-    .lesson-item {padding:12px 16px;border-radius:10px;margin-bottom:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.02);display:flex;align-items:center;}
-    .lesson-item.completed::before {content:"✓";color:var(--accent);margin-right:10px;font-weight:bold;}
-    .lesson-item::before {content:"○";margin-right:10px;color:var(--muted);}
-    .btn {background:var(--accent);color:#012023;border:none;padding:8px 16px;border-radius:10px;font-weight:600;cursor:pointer;display:inline-block;text-decoration:none;margin-right:8px;margin-bottom:8px;}
-    .btn-outline {background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);}
-    .table {width:100%;border-collapse:collapse;}
-    .table th, .table td {padding:8px;border-bottom:1px solid rgba(255,255,255,0.05);text-align:left;}
-    .section {margin-bottom:32px;}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Кабинет — Меркурий без паники</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f1724; --card:#0b1220; --accent:#22c55e; --muted:#94a3b8; --glass:rgba(255,255,255,0.03); --danger:#ef4444;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',sans-serif;background:linear-gradient(180deg,#071024 0%,#071229 100%);color:#e6eef8;line-height:1.5;}
+.container{max-width:1100px;margin:0 auto;padding:24px;}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.03);margin-bottom:32px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.mark{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:800;color:#012023;}
+.user-info{display:flex;align-items:center;gap:12px;}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:600;color:#012023;}
+.card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 24px rgba(2,6,23,0.6);margin-bottom:24px;}
+h1,h2{font-size:24px;margin:0 0 20px;color:#f1f5f9;}
+h3{font-size:18px;margin:0 0 12px;}
+.progress-bar{height:6px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;margin:8px 0;}
+.progress-fill{height:100%;background:var(--accent);border-radius:3px;}
+.badge{font-size:12px;padding:2px 8px;border-radius:20px;font-weight:600;}
+.badge.active{background:rgba(34,197,94,0.2);color:var(--accent);}
+.badge.expired{background:rgba(239,68,68,0.2);color:var(--danger);}
+.lesson-item{padding:12px 16px;border-radius:10px;margin-bottom:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.02);display:flex;align-items:center;}
+.lesson-item.completed::before{content:"✓";color:var(--accent);margin-right:10px;font-weight:bold;}
+.lesson-item::before{content:"○";margin-right:10px;color:var(--muted);}
+.btn{background:var(--accent);color:#012023;border:none;padding:8px 16px;border-radius:10px;font-weight:600;cursor:pointer;display:inline-block;text-decoration:none;margin-right:8px;margin-bottom:8px;}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);}
+</style>
 </head>
 <body>
-  <div id="login-screen" class="container">
-    <div class="card" style="max-width:400px;margin:60px auto;">
-      <div class="logo"><div class="mark">М</div><strong>Меркурий без паники</strong></div>
+
+<div id="login-screen" class="visible">
+  <div class="container">
+    <div class="card" style="max-width:400px;margin:60px auto">
+      <div class="logo">
+        <div class="mark">М</div>
+        <strong>Меркурий без паники</strong>
+      </div>
       <h2>Вход в кабинет</h2>
       <form id="loginForm">
         <div style="margin-bottom:16px">
           <label style="display:block;margin-bottom:6px;color:#cbd5e1">Логин</label>
-          <input type="text" id="login" style="width:100%;padding:10px;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.05);color:#f1f5f9" required>
+          <input type="text" id="login" required style="width:100%;padding:10px;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.05);color:#f1f5f9">
         </div>
         <div style="margin-bottom:16px">
           <label style="display:block;margin-bottom:6px;color:#cbd5e1">Пароль</label>
-          <input type="password" id="password" style="width:100%;padding:10px;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.05);color:#f1f5f9" required>
+          <input type="password" id="password" required style="width:100%;padding:10px;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.05);color:#f1f5f9">
         </div>
         <button type="submit" class="btn">Войти</button>
         <div style="font-size:13px;color:var(--muted);margin-top:12px">
@@ -56,117 +58,115 @@
       </form>
     </div>
   </div>
+</div>
 
-  <div id="cabinet-screen"></div>
+<div id="cabinet-screen"></div>
 
-  <script>
-    const DEMO_USERS = {
-      admin: {
-        id:'adm-001', name:'Админ', email:'admin', role:'admin', avatar:'А', createdAt:'2024-03-10',
-        students:[
-          { name:'Анна Петрова', plan:'Про', status:'active', progress:'50%' },
-          { name:'Иван Сидоров', plan:'Стандарт', status:'trial', progress:'20%' },
-          { name:'ООО «Агрохим»', plan:'Про', status:'expired', progress:'85%' }
-        ]
-      },
-      user: {
-        id:'usr-128', name:'Анна Петрова', email:'user', role:'user', avatar:'А',
-        subscription:{plan:'Про', status:'active', expires:'15.02.2026'},
-        lessons:[
-          {id:1,title:'Регистрация организации',completed:true},
-          {id:2,title:'Добавление сотрудников',completed:true},
-          {id:3,title:'Настройка прав доступа',completed:true},
-          {id:4,title:'Виды ВСД',completed:false},
-          {id:5,title:'Оформление ВСД на ТН',completed:false},
-        ]
-      }
-    };
+<script>
+const DEMO_USERS = {
+  admin: {
+    id:'adm-001', name:'Админ', email:'admin', role:'admin', avatar:'А',
+    students:[
+      { name:'Анна Петрова', plan:'Про', status:'active', progress:'50%' },
+      { name:'Иван Сидоров', plan:'Стандарт', status:'trial', progress:'20%' },
+      { name:'ООО «Агрохим»', plan:'Про', status:'expired', progress:'85%' }
+    ]
+  },
+  user: {
+    id:'usr-128', name:'Анна Петрова', email:'user', role:'user', avatar:'А',
+    subscription:{ plan:'Про', status:'active', expires:'15.02.2026' },
+    lessons:[
+      { title:'Регистрация организации', completed:true },
+      { title:'Добавление сотрудников', completed:true },
+      { title:'Настройка прав доступа', completed:true },
+      { title:'Виды ВСД', completed:false },
+      { title:'Оформление ВСД на ТН', completed:false }
+    ]
+  }
+};
 
-    const loginScreen = document.getElementById('login-screen');
-    const cabinetScreen = document.getElementById('cabinet-screen');
-    const loginForm = document.getElementById('loginForm');
+const loginScreen = document.getElementById('login-screen');
+const cabinetScreen = document.getElementById('cabinet-screen');
+const loginForm = document.getElementById('loginForm');
 
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if(currentUser) showCabinet(currentUser);
+const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+if(currentUser) showCabinet(currentUser);
 
-    if(loginForm){
-      loginForm.addEventListener('submit', e=>{
-        e.preventDefault();
-        const login = e.target.login.value.trim().toLowerCase();
-        const pwd = e.target.password.value;
-        if(DEMO_USERS[login] && pwd===login){
-          const user = DEMO_USERS[login];
-          localStorage.setItem('currentUser',JSON.stringify(user));
-          showCabinet(user);
-        } else alert('Неверный логин/пароль. Попробуйте: user/user или admin/admin');
-      });
-    }
+loginForm?.addEventListener('submit', e=>{
+  e.preventDefault();
+  const login = e.target.login.value.trim().toLowerCase();
+  const pwd = e.target.password.value;
+  if(DEMO_USERS[login] && pwd === login){
+    const user = DEMO_USERS[login];
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    showCabinet(user);
+  }else alert('Неверный логин/пароль. Попробуйте: user/user или admin/admin');
+});
 
-    function showCabinet(user){
-      loginScreen.style.display='none';
-      cabinetScreen.style.display='block';
+function showCabinet(user){
+  loginScreen.style.display='none';
+  cabinetScreen.style.display='block';
 
-      let html = `<div class="container">
-        <header>
-          <div class="logo"><div class="mark">М</div><strong>Меркурий без паники</strong></div>
-          <div class="user-info">
-            <div class="avatar">${user.avatar}</div>
-            <div><div>${user.name}</div><div style="font-size:13px;color:var(--muted)">${user.role==='admin'?'Администратор':'Ученик'}</div></div>
-            <a href="#" id="logout" style="margin-left:16px;color:var(--muted);text-decoration:underline">Выйти</a>
-          </div>
-        </header>`;
+  let html = `<div class="container">
+    <header>
+      <div class="logo"><div class="mark">М</div><strong>Меркурий без паники</strong></div>
+      <div class="user-info">
+        <div class="avatar">${user.avatar}</div>
+        <div><div>${user.name}</div><div style="font-size:13px;color:var(--muted)">${user.role==='admin'?'Администратор':'Ученик'}</div></div>
+        <a href="#" id="logout" style="margin-left:16px;color:var(--muted);text-decoration:underline">Выйти</a>
+      </div>
+    </header>`;
 
-      if(user.role==='admin'){
-        html += `<h2>Панель администратора</h2>
-          <div class="card"><p>Всего учеников: <strong>${user.students.length}</strong></p></div>
-          <div class="card"><table class="table">
-            <thead><tr><th>Имя</th><th>Тариф</th><th>Статус</th><th>Прогресс</th></tr></thead>
-            <tbody>${user.students.map(s=>`<tr>
-              <td>${s.name}</td>
-              <td>${s.plan}</td>
-              <td><span class="badge ${s.status}">${s.status}</span></td>
-              <td>${s.progress}</td>
-            </tr>`).join('')}</tbody>
-          </table></div>`;
-      } else {
-        const completed = user.lessons.filter(l=>l.completed).length;
-        const total = user.lessons.length;
-        const percent = Math.round(completed/total*100);
-        html += `<h2>Добро пожаловать, ${user.name}!</h2>
-          <div class="card">
-            <div><strong>Подписка:</strong> ${user.subscription.plan}</div>
-            <div style="margin:8px 0"><span class="badge ${user.subscription.status}">${user.subscription.status==='active'?'Активна':'Истекла'}</span> до ${user.subscription.expires}</div>
-            <div>Прогресс: ${completed}/${total} уроков</div>
-            <div class="progress-bar"><div class="progress-fill" style="width:${percent}%"></div></div>
-          </div>
-          <div class="card">
-            <h3>Уроки</h3>
-            ${user.lessons.map(l=>`<div class="lesson-item ${l.completed?'completed':''}">${l.title}</div>`).join('')}
-            <button class="btn" onclick="completeNext()">✅ Пройти следующий урок</button>
-          </div>`;
-      }
+  if(user.role==='admin'){
+    html+=`<h2>Панель администратора</h2>
+      <div class="card"><p>Всего учеников: <strong>${user.students.length}</strong></p></div>
+      <div class="card"><table style="width:100%;border-collapse:collapse">
+      <thead><tr><th>Имя</th><th>Тариф</th><th>Статус</th><th>Прогресс</th></tr></thead><tbody>`;
+    user.students.forEach(s=>{
+      html+=`<tr>
+        <td>${s.name}</td><td>${s.plan}</td><td><span class="badge ${s.status}">${s.status}</span></td><td>${s.progress}</td>
+      </tr>`;
+    });
+    html+='</tbody></table></div>';
+  }else{
+    const completed = user.lessons.filter(l=>l.completed).length;
+    const total = user.lessons.length;
+    const percent = Math.round(completed/total*100);
+    html+=`<h2>Добро пожаловать, ${user.name}!</h2>
+      <div class="card">
+        <div><strong>Подписка:</strong> ${user.subscription.plan}</div>
+        <div style="margin:8px 0"><span class="badge ${user.subscription.status}">${user.subscription.status==='active'?'Активна':'Истекла'}</span> до ${user.subscription.expires}</div>
+        <div>Прогресс: ${completed}/${total} уроков</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:${percent}%"></div></div>
+      </div>
+      <h3>Уроки</h3><div class="card">`;
+    user.lessons.forEach(lesson=>{
+      html+=`<div class="lesson-item ${lesson.completed?'completed':''}">${lesson.title}</div>`;
+    });
+    html+=`<button class="btn" onclick="completeNext()">✅ Пройти следующий урок</button></div>`;
+  }
 
-      html += `</div>`;
-      cabinetScreen.innerHTML = html;
+  html+='</div>';
+  cabinetScreen.innerHTML=html;
 
-      document.getElementById('logout').onclick=e=>{
-        e.preventDefault();
-        localStorage.removeItem('currentUser');
-        cabinetScreen.style.display='none';
-        loginScreen.style.display='block';
-      };
-    }
+  document.getElementById('logout').onclick=e=>{
+    e.preventDefault();
+    localStorage.removeItem('currentUser');
+    cabinetScreen.style.display='none';
+    loginScreen.style.display='block';
+  };
+}
 
-    function completeNext(){
-      let user=JSON.parse(localStorage.getItem('currentUser'));
-      if(!user||user.role!=='user') return;
-      const next=user.lessons.find(l=>!l.completed);
-      if(next){
-        next.completed=true;
-        localStorage.setItem('currentUser',JSON.stringify(user));
-        showCabinet(user);
-      } else alert('Все уроки пройдены! 🎉');
-    }
-  </script>
+function completeNext(){
+  const user=JSON.parse(localStorage.getItem('currentUser'));
+  if(!user || user.role!=='user') return;
+  const next=user.lessons.find(l=>!l.completed);
+  if(next){
+    next.completed=true;
+    localStorage.setItem('currentUser',JSON.stringify(user));
+    showCabinet(user);
+  }else alert('Все уроки пройдены! 🎉');
+}
+</script>
 </body>
 </html>
